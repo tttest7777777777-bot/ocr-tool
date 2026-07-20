@@ -34,6 +34,11 @@
         font-size: 14px; color: #334155; background: #fff; cursor: pointer;
       }
       .model-selector .desc { font-size: 13px; color: #94a3b8; }
+      
+      .mode-group { display: flex; gap: 6px; align-items: center; }
+      .btn-mode { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; background: #fff; color: #475569; cursor: pointer; font-size: 13px; }
+      .btn-mode:hover { background: #f1f5f9; }
+      .btn-mode.active-mode { background: #1a365d; color: #fff; border-color: #1a365d; }
 
       /* 書類種別 */
       .doc-type-bar {
@@ -287,7 +292,7 @@
       }
       .notice strong { color: #78350f; }
     </style>
-    <script type="module" crossorigin src="/ocr-tool/assets/index-BGwj6Hop.js"></script>
+    <script type="module" crossorigin src="/ocr-tool/assets/index-D1lQGByo.js"></script>
   </head>
   <body>
     <header>
@@ -349,7 +354,14 @@
           <button class="btn-primary" id="btn-correct-ocr">補正して OCR 実行</button>
           <button class="btn-secondary" id="btn-direct-ocr">そのまま OCR 実行</button>
         </div>
+        <div class="mode-group">
+          <span style="font-size:13px; color:#64748b;">4点モード:</span>
+          <button class="btn-mode active-mode" id="btn-mode-independent">個別移動</button>
+          <button class="btn-mode" id="btn-mode-scale">矩形スケール</button>
+        </div>
       </div>
+    
+     
 
       <!-- プログレス -->
       <div id="progress-section">
